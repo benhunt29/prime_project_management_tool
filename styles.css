@@ -1,0 +1,49 @@
+body {
+	font-size: 12px;
+}
+
+/*section {
+	border: 2px solid #000;
+}*/
+
+#genSection {
+	padding: 10px 0 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+#compHeader {
+	padding: 10px 0 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.skillsRow {
+	margin-top: 10px;
+}
+
+.skillBox {
+	margin: 10px 0 10px 0;
+}
+
+.skillTitle {
+	padding: 5px 0 5px 0;
+	border-bottom: 3px solid #000;
+}
+
+.skillItem {
+	padding: 10px 0 10px 0;
+	border-bottom: 1px dashed #000;
+}
+
+.sprints {
+	margin: 20px 0 0 0;
+}
+
+#sprintsSection {
+	font-size: 2em;
+	margin: 20px;
+}
+
+.sprintsBox {
+	padding: 10px;
+	border: 3px solid #000;
+}

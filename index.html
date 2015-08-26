@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Project Management Tool</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="container">
+
+	<section id="genSection" class="row">
+		<section class="col-sm-8 col-sm-offset-2 text-center">
+			<header id="compName"><h1>Scrum Project Generator</h1></header>
+
+			<input type="button" id="generate" class="btn-lg btn-warning" value="Generate" />
+		</section>
+	</section>
+	
+	<section id="compHeader" class="row">
+		<section class="col-sm-8 col-sm-offset-2 text-center">
+			<header id="compName"><h1>COMPANY NAME</h1></header>
+
+			<input type="button" id="assignEmp" class="btn-lg btn-success" value="Assign Employee" />
+		</section>
+	</section>
+	
+	<section class="row skillsRow">
+
+		<section class="col-sm-4 skillBox">
+			<section class="bg-success feBox">
+				
+				<header class="skillTitle text-center">
+					<h2>Front End</h2>
+				</header>
+				
+				<section class="row skillItem">
+					<section class="col-sm-6 text-right">
+						Required Scrum Points:
+					</section>
+					<section id="feReqPts" class="col-sm-6 text-left">
+						60
+					</section>
+				</section>
+				
+				<section class="row skillItem">
+					<section class="col-sm-6 text-right">
+						Employee Name:
+					</section>
+					<section id="feName" class="col-sm-6 text-left">
+						Jason
+					</section>
+				</section>
+
+				<section class="row skillItem">
+					<section class="col-sm-6 text-right">
+						Employee Scrum Points:
+					</section>
+					<section id="fePts" class="col-sm-6 text-left">
+						15
+					</section>
+				</section>
+
+			</section>
+		</section>
+
+		<section class="col-sm-4 skillBox">
+			<section class="bg-warning csBox">
+				
+				<header class="skillTitle text-center">
+					<h2>Client Side</h2>
+				</header>
+				
+				<section class="row skillItem">
+					<section class="col-sm-6 text-right skillCell">
+						Required Scrum Points:
+					</section>
+					<section id="csReqPts" class="col-sm-6 text-left skillCell">
+						60
+					</section>
+				</section>
+				
+				<section class="row skillItem">
+					<section class="col-sm-6 text-right">
+						Employee Name:
+					</section>
+					<section id="csName" class="col-sm-6 text-left">
+						Shawn
+					</section>
+				</section>
+
+				<section class="row skillItem">
+					<section class="col-sm-6 text-right">
+						Employee Scrum Points:
+					</section>
+					<section id="csPts" class="col-sm-6 text-left">
+						15
+					</section>
+				</section>
+
+			</section>
+		</section>
+
+		<section class="col-sm-4 skillBox">
+			<section class="bg-info ssBox">
+				
+				<header class="skillTitle text-center">
+					<h2>Server Side</h2>
+				</header>
+				
+				<section class="row skillItem">
+					<section class="col-sm-6 text-right">
+						Required Scrum Points:
+					</section>
+					<section id="ssReqPts" class="col-sm-6 text-left">
+						60
+					</section>
+				</section>
+				
+				<section class="row skillItem">
+					<section class="col-sm-6 text-right">
+						Employee Name:
+					</section>
+					<section id="ssName" class="col-sm-6 text-left">
+						Ben
+					</section>
+				</section>
+
+				<section class="row skillItem">
+					<section class="col-sm-6 text-right">
+						Employee Scrum Points:
+					</section>
+					<section id="ssPts" class="col-sm-6 text-left">
+						15
+					</section>
+				</section>
+
+			</section>
+		</section>
+
+	</section>
+	
+	<section id="sprintsSection" class="row">
+		<section class="sprintsBox col-sm-6 col-sm-offset-3 bg-primary">
+			<summary class="text-center">
+				The COMPANY NAME development team will require <strong><span id="sprintsNum"></span></strong> of sprints to complete the project.
+			</summary>
+		</section>
+	</section>
+
+</div>
+</body>
+</html>
