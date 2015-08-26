@@ -1,0 +1,24 @@
+{
+  "name": "project_management_group_project",
+  "version": "1.0.0",
+  "description": "Project Management App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panoptican/project_management_tool.git"
+  },
+  "author": "Sean, Jason, Ben",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/panoptican/project_management_tool/issues"
+  },
+  "homepage": "https://github.com/panoptican/project_management_tool#readme",
+  "dependencies": {
+    "chance": "^0.7.6",
+    "express": "^4.13.3"
+  }
+}
