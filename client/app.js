@@ -8,7 +8,9 @@ function generateName() {
 	var adjNoun = new adjNoun();// adjective noun generator for company name
 	// adding in a random number (seed number) further randomizes the name generation
 	adjNoun.seed(chance.integer({min: 0, max: 1000}));
-	return adjNoun().join(' ');
+	// proper capitalization for company name
+	return adjNoun[0].charAt(0).toUpperCase() +" "+ adjNoun[1].charAt(1).toUpperCase();
+	//return adjNoun().join(' ');
 }
 
 var Project = function() {
@@ -25,9 +27,9 @@ var Project = function() {
 // displays project info onto DOM after generation
 Project.prototype.showProjectInfo = function () {
 	$('#compName').text(projectInfo.compName);
-	$('#fePts').text(projectInfo.fePts);
-	$('#csPts').text(projectInfo.csPts);
-	$('#ssPts').text(projectInfo.ssPts);
+	$('#feReqPts').text(projectInfo.fePts);
+	$('#csReqPts').text(projectInfo.csPts);
+	$('#ssReqPts').text(projectInfo.ssPts);
 };
 
 // check if new employee skill set vs total points needed is greater than previously set (want highest count)
@@ -60,7 +62,7 @@ var addEmployee = function (employee) {
 	projectInfo.assignedSkills.push(abbr);// push the skills to the object for referencing
 
 	$('#'+ abbr +'Name').val(employee.name);
-	$('#'+ abbr +'Points').val(employee.scrumPts);
+	$('#'+ abbr +'Pts').val(employee.scrumPts);
 };
 
 // gets a random employee, only called for first iteration, as there is nothing needed to post
