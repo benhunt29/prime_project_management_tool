@@ -19,10 +19,10 @@ app.post('/',function(req,res,next){
 
 //app.use('/', index);
 //app.use('/users', users);
-app.use('/assets',express.static(__dirname + '/node_modules/jquery/dist/'));
-app.use('/assets',express.static(__dirname + '/node_modules/bootstrap/dist/css/'));
-app.use('/assets',express.static(__dirname + '/node_modules/adj-noun/'));
-app.use('/assets',express.static(__dirname + '/node_modules/chance/'));
+app.use('/public/assets',express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use('/public/assets',express.static(__dirname + '/node_modules/bootstrap/dist/css/'));
+app.use('/public/assets',express.static(__dirname + '/node_modules/adj-noun/'));
+app.use('/public/assets',express.static(__dirname + '/node_modules/chance/'));
 var server = app.listen(process.env.PORT || 3000, function(){
     //var port = controllers.address().port;
     //console.log('App listening on ',);
