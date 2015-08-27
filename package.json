@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "project_management_tool",
   "version": "1.0.0",
   "description": "Project Management Tool",
@@ -6,12 +7,25 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm client/app.js"
+=======
+  "name": "project_management_group_project",
+  "version": "1.0.0",
+  "description": "Project Management App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+>>>>>>> Server
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/panoptican/project_management_tool.git"
   },
+<<<<<<< HEAD
   "author": "Ben, Jason, Shawn",
+=======
+  "author": "Sean, Jason, Ben",
+>>>>>>> Server
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/panoptican/project_management_tool/issues"
