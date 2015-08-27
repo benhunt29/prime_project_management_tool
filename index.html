@@ -13,7 +13,7 @@
     <!-- Generator Section -->
     <div class="row genSection">
         <div class="col-sm-offset-2 col-sm-8 text-center">
-            <h1>Scrum Project Generator</h1>
+            <h1 class="page-header">Scrum Project Generator</h1>
 
             <input type="button" id="generate" class="btn-lg btn-warning" value="Generate" />
         </div>
@@ -22,7 +22,7 @@
     <!-- Company Section / Assign Employee -->
     <div class="row compSection">
         <div class="col-sm-offset-2 col-sm-8 text-center">
-            <h2 id="compName">Company Name</h2>
+            <h2 id="compHeader" class="page-header">Company Name</h2>
 
             <input type="button" id="assignEmp" class="btn-lg btn-success" value="Assign Employee" />
         </div>
@@ -38,19 +38,19 @@
             <div class="row skillItems">
                 <div class="skillItem col-sm-12 text-center">
                     <span class="property col-sm-7 text-center">Required Scrum Points:</span>
-                    <span class="feReqPts value col-sm-5 text-center">60</span>
+                    <span id="feReqPts" class="value col-sm-5 text-center">60</span>
                 </div>
             </div>
             <div class="row">
                 <div class="skillItem col-sm-12 text-center">
                     <span class="property col-sm-7 text-center">Employee Name:</span>
-                    <span class="feName value col-sm-5 text-center">Jason Spidle</span>
+                    <span id="feName" class="value col-sm-5 text-center">Jason Spidle</span>
                 </div>
             </div>
             <div class="row">
                 <div class="skillItem col-sm-12 text-center">
                     <span class="property col-sm-7 text-center">Employee Scrum Points:</span>
-                    <span class="fePts value col-sm-5 text-center">15</span>
+                    <span id="fePts" class="value col-sm-5 text-center">15</span>
                 </div>
             </div>
         </div>
@@ -62,19 +62,19 @@
             <div class="row skillItems">
                 <div class="skillItem col-sm-12 text-center">
                     <span class="property col-sm-7 text-center">Required Scrum Points:</span>
-                    <span class="csReqPts value col-sm-5 text-center">60</span>
+                    <span id="csReqPts" class="value col-sm-5 text-center">60</span>
                 </div>
             </div>
             <div class="row">
                 <div class="skillItem col-sm-12 text-center">
                     <span class="property col-sm-7 text-center">Employee Name:</span>
-                    <span class="csName value col-sm-5 text-center">Shawn Fagerstrom</span>
+                    <span id="csName" class="value col-sm-5 text-center">Shawn Fagerstrom</span>
                 </div>
             </div>
             <div class="row">
                 <div class="skillItem col-sm-12 text-center">
                     <span class="property col-sm-7 text-center">Employee Scrum Points:</span>
-                    <span class="csPts value col-sm-5 text-center">15</span>
+                    <span id="csPts" class="value col-sm-5 text-center">15</span>
                 </div>
             </div>
         </div>
@@ -86,19 +86,19 @@
             <div class="row skillItems">
                 <div class="skillItem col-sm-12 text-center">
                     <span class="property col-sm-7 text-center">Required Scrum Points:</span>
-                    <span class="ssReqPts value col-sm-5 text-center">60</span>
+                    <span id="ssReqPts" class="value col-sm-5 text-center">60</span>
                 </div>
             </div>
             <div class="row">
                 <div class="skillItem col-sm-12 text-center">
                     <span class="property col-sm-7 text-center">Employee Name:</span>
-                    <span class="ssName value col-sm-5 text-center">Ben Hunt</span>
+                    <span id="ssName" class="value col-sm-5 text-center">Ben Hunt</span>
                 </div>
             </div>
             <div class="row">
                 <div class="skillItem col-sm-12 text-center">
                     <span class="property col-sm-7 text-center">Employee Scrum Points:</span>
-                    <span class="ssPts value col-sm-5 text-center">15</span>
+                    <span id="ssPts" class="value col-sm-5 text-center">15</span>
                 </div>
             </div>
         </div>
@@ -109,7 +109,7 @@
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6 bg-primary sprintsSection">
             <summary class="text-center sprintsSummary">
-                The COMPANY NAME development team will require <strong><span id="sprintsNum">5</span></strong> sprints to complete the project.
+                The <strong><span id="compName">COMPANY NAME</span></strong> development team will require <strong><span id="sprintsNum">5</span></strong> sprints to complete the project.
             </summary>
         </div>
     </div>
