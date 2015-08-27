@@ -1,5 +1,5 @@
 express = require('express');
-employee = require('./employee');
+employee = require('./controllers/employee');
 
 var app = express();
 
@@ -17,11 +17,13 @@ app.post('/',function(req,res,next){
     res.send("Scrum Points: " + employee.scrumPts + '\n');
 });
 
-app.use('/', index);
-app.use('/users', users);
+//app.use('/', index);
+//app.use('/users', users);
 app.use('/assets',express.static(__dirname + '/node_modules/jquery/dist/'));
-app.use('/assets',express.static(__dirname + '/node_modules/bootstrap/dist/'));
+app.use('/assets',express.static(__dirname + '/node_modules/bootstrap/dist/css/'));
+app.use('/assets',express.static(__dirname + '/node_modules/adj-noun/'));
+app.use('/assets',express.static(__dirname + '/node_modules/chance/'));
 var server = app.listen(process.env.PORT || 3000, function(){
-    //var port = server.address().port;
+    //var port = controllers.address().port;
     //console.log('App listening on ',);
 });

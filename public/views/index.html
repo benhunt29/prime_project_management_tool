@@ -3,17 +3,16 @@
 <head>
 	<title>Project Management Tool</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/bootstrap.min.css">
 	<link rel="stylesheet" href="../assets/styles.css">
-    <script src="../../../client/app.js"></script>
-    <script src="../server/public/assets/jquery.min.js"></script>
+
 </head>
 <body>
 
 <div class="container">
     
     <!-- Generator Section -->
-    <div class="row genSection">
+    <div class="row genSection show">
         <div class="col-sm-offset-2 col-sm-8 text-center">
             <h1 class="page-header">Scrum Project Generator</h1>
 
@@ -22,7 +21,7 @@
     </div>
 
     <!-- DIV to wrap the entire project section -->
-    <div id="projSection">
+    <div id="projSection" class="hidden">
 
     <!-- Company Section / Assign Employee -->
     <div class="row compSection">
@@ -123,5 +122,9 @@
 <!-- Close container DIV -->
 </div>
 
+<script src="../assets/jquery.min.js"></script>
+<script src="../assets/chance.js"></script>
+<script src="../assets/adj-noun.js"></script>
+<script src="../assets/scripts.js"></script>
 </body>
 </html>
