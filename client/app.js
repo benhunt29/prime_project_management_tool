@@ -1,23 +1,25 @@
- * Created by Shawn on 8/26/15.
+ /* Created by Shawn on 8/26/15.
  */
 var chance = new Chance();
 var projectInfo;
 
 // generates random company name
 function generateName() {
-	var adjNoun = new adjNoun();
+	var adjNoun = new adjNoun();// adjective noun generator for company name
+	// adding in a random number (seed number) further randomizes the name generation
 	adjNoun.seed(chance.integer({min: 0, max: 1000}));
 	return adjNoun().join(' ');
 }
 
 var Project = function() {
 	this.compName = generateName();
+	// generates random point requirements for project
 	this.fePts = chance.integer({min: 10, max: 60});
 	this.csPts = chance.integer({min: 10, max: 60});
 	this.ssPts = chance.integer({min: 10, max: 60});
-	this.assignedSkills = [];
+	this.assignedSkills = [];// skill sets assigned to project (ss, cs, fe)
 	this.sprints = 0;// number of sprints needed for completion
-	this.showProjectInfo();
+	this.showProjectInfo();// calls the show function, so as soon as the project is created, it is shown
 };
 
 // displays project info onto DOM after generation
@@ -62,7 +64,7 @@ var addEmployee = function (employee) {
 };
 
 // gets a random employee, only called for first iteration, as there is nothing needed to post
-var createEmployee = function () {
+var getEmployee = function () {
 	$.ajax (
 	{
 		type: "GET",
@@ -85,21 +87,34 @@ var postEmployee = function () {
 		dataType: 'json'
 	}).done(function (res) {
 		addEmployee(res);
+		// run until 3 employees are created (last call is when there's 2)
 		if(projectInfo.assignedSkills.length < 3) {
 			postEmployee();
 		}
 	});
 };
 
-
 $(document).ready(function () {
-
+	// generate new project
 	$('#generate').click(function() {
 		projectInfo = new Project();
-		$('#genSection').addClass('hidden');
+		$('#genSection').removeClass('show').addClass('hidden');// hide top section
+		$('#projSection').removeClass('show').addClass('hidden');// show project section
 	});
 
+	// add employees to project (only need to click once
 	$('#assignEmp').click(function () {
-		createEmployee();
+		// only allow it to be clicked when no employees have been created
+		if(projectInfo.assignedSkills.length == 0)
+		{
+			getEmployee();
+		}
+	});
+
+	// reset project generator
+	$('#reset').click(function () {
+		$('#genSection').removeClass('hidden').addClass('show');// show top section
+		$('#projSection').removeClass('hidden').addClass('show');// hide project section
+		projectInfo.length = 0;// clear out object for new one
 	});
 });
