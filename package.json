@@ -19,8 +19,10 @@
   "homepage": "https://github.com/panoptican/project_management_tool#readme",
   "dependencies": {
     "adj-noun": "^0.1.1",
+    "body-parser": "^1.13.3",
     "bootstrap": "^3.3.5",
     "chance": "^0.7.6",
+    "component": "^1.1.0",
     "express": "^4.13.3",
     "jquery": "^2.1.4",
     "path": "^0.11.14"

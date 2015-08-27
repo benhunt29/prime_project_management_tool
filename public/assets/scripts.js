@@ -5,20 +5,24 @@ var projectInfo;
 
 // generates random company name
 function generateName() {
-	var adjNoun = new adjNoun();// adjective noun generator for company name
-	// adding in a random number (seed number) further randomizes the name generation
-	adjNoun.seed(chance.integer({min: 0, max: 1000}));
-	// proper capitalization for company name
-	return adjNoun[0].charAt(0).toUpperCase() +" "+ adjNoun[1].charAt(1).toUpperCase();
-	//return adjNoun().join(' ');
+	//adjNoun = new adjNoun();// adjective noun generator for company name
+	//// adding in a random number (seed number) further randomizes the name generation
+	//adjNoun.seed(chance.integer({min: 0, max: 1000}));
+	//// proper capitalization for company name
+	//return adjNoun[0].charAt(0).toUpperCase() +" "+ adjNoun[1].charAt(1).toUpperCase();
+	////return adjNoun().join(' ');
+	//console.log("Some Awesome Company");
+	return "Some Awesome Company";
 }
 
 var Project = function() {
 	this.compName = generateName();
+	//console.log(this.compName);
 	// generates random point requirements for project
 	this.fePts = chance.integer({min: 10, max: 60});
 	this.csPts = chance.integer({min: 10, max: 60});
 	this.ssPts = chance.integer({min: 10, max: 60});
+	//console.log(this);
 	this.assignedSkills = [];// skill sets assigned to project (ss, cs, fe)
 	this.sprints = 0;// number of sprints needed for completion
 	this.showProjectInfo();// calls the show function, so as soon as the project is created, it is shown
@@ -26,10 +30,11 @@ var Project = function() {
 
 // displays project info onto DOM after generation
 Project.prototype.showProjectInfo = function () {
-	$('#compName').text(projectInfo.compName);
-	$('#feReqPts').text(projectInfo.fePts);
-	$('#csReqPts').text(projectInfo.csPts);
-	$('#ssReqPts').text(projectInfo.ssPts);
+	console.log("display", this);
+	$('#compName, #compHeader').text(this.compName);
+	$('#feReqPts').text(this.fePts);
+	$('#csReqPts').text(this.csPts);
+	$('#ssReqPts').text(this.ssPts);
 };
 
 // check if new employee skill set vs total points needed is greater than previously set (want highest count)
@@ -59,7 +64,7 @@ var addEmployee = function (employee) {
 			break;
 	}
 	projectInfo.calcSprint(employee.scrumPts, abbr);
-	projectInfo.assignedSkills.push(abbr);// push the skills to the object for referencing
+	projectInfo.assignedSkills.push(employee.skills);// push the skills to the object for referencing
 
 	$('#'+ abbr +'Name').val(employee.name);
 	$('#'+ abbr +'Pts').val(employee.scrumPts);
@@ -70,22 +75,26 @@ var getEmployee = function () {
 	$.ajax (
 	{
 		type: "GET",
-		url: 'http://127.0.0.1:3000',
-		data: 'employee',
+		url: '/employee',
 		dataType: 'json'
 	}).done(function (res) {
+			console.log(res);
 		addEmployee(res);
-		postEmployee();
+		if(projectInfo.assignedSkills.length < 3) {
+			getEmployee();
+		}
 	});
 };
 
 // gets a random employee after the first, posting the filled positions for comparison for no overlap
 var postEmployee = function () {
+	console.log(projectInfo.assignedSkills);
 	$.ajax (
 	{
 		type: "POST",
-		url: 'http://127.0.0.1:3000',
-		data: JSON.stringify(projectInfo.assignedSkills),
+		url: '/employee',
+		//data: {skills: projectInfo.assignedSkills},
+		data: {skills: JSON.stringify(projectInfo.assignedSkills)},
 		dataType: 'json'
 	}).done(function (res) {
 		addEmployee(res);
@@ -99,9 +108,10 @@ var postEmployee = function () {
 $(document).ready(function () {
 	// generate new project
 	$('#generate').click(function() {
+		//console.log('generate');
 		projectInfo = new Project();
-		$('#genSection').removeClass('show').addClass('hidden');// hide top section
-		$('#projSection').removeClass('show').addClass('hidden');// show project section
+		$('#genSection').addClass('hidden');// hide top section
+		$('#projSection').removeClass('hidden');// show project section
 	});
 
 	// add employees to project (only need to click once
@@ -115,8 +125,8 @@ $(document).ready(function () {
 
 	// reset project generator
 	$('#reset').click(function () {
-		$('#genSection').removeClass('hidden').addClass('show');// show top section
-		$('#projSection').removeClass('hidden').addClass('show');// hide project section
+		$('#genSection').removeClass('hidden');// show top section
+		$('#projSection').addClass('hidden');// hide project section
 		projectInfo.length = 0;// clear out object for new one
 	});
 });
