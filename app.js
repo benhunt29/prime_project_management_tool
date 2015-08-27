@@ -1,5 +1,5 @@
 var express = require('express');
-var employee = require('./controllers/employee');
+var Employee = require('./controllers/employee');
 var path = require('path');
 var bodyParser = require('body-parser');
 
@@ -14,21 +14,23 @@ app.get('/employee', function(req,res,next){
     //res.send("Name: " + employee.name + '\n');
     //res.send("Skills: " + employee.skills + '\n');
     //res.send("Scrum Points: " + employee.scrumPts + '\n');
-	res.send(JSON.stringify({"name": employee.name, "skills": employee.skills, "points": employee.scrumPts}));
+	var employee = new Employee();
+	res.send(JSON.stringify({"name": employee.name, "skills": employee.skills, "scrumPts": employee.scrumPts}));
 });
 
 app.post('/employee',function(req,res,next){
     //var assignedSkills = req.params;
 	//console.log(req.params);
-	console.log("skills test", req.body.skills);
-	var assignedSkills = ["Server Side"];
-	//var assignedSkills = req.body.skills;
+	//console.log("skills test", req.body.skills);
+	//var assignedSkills = ["Server Side"];
+	var assignedSkills = req.body.skills;
     //res.send("Name: " + employee.name + '\n');
     //res.send("Skills: " + employee.skills(assignedSkills) + '\n');
     //res.send("Scrum Points: " + employee.scrumPts + '\n');
-	console.log("var", assignedSkills);
+	//console.log("var", assignedSkills);
 	//console.log("property", employee.employeeSkill);
-	res.send({"name": employee.name, "skills": employee.employeeSkill(assignedSkills), "points": employee.scrumPts});
+	var employee = new Employee(JSON.parse(assignedSkills));
+	res.send({"name": employee.name, "skills": employee.skills, "scrumPts": employee.scrumPts});
 	//res.send(JSON.stringify({"name": employee.name, "skills": employee.skills(assignedSkills), "points": employee.scrumPts}));
 });
 

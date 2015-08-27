@@ -17,12 +17,10 @@ function generateName() {
 
 var Project = function() {
 	this.compName = generateName();
-	//console.log(this.compName);
 	// generates random point requirements for project
 	this.fePts = chance.integer({min: 10, max: 60});
 	this.csPts = chance.integer({min: 10, max: 60});
 	this.ssPts = chance.integer({min: 10, max: 60});
-	//console.log(this);
 	this.assignedSkills = [];// skill sets assigned to project (ss, cs, fe)
 	this.sprints = 0;// number of sprints needed for completion
 	this.showProjectInfo();// calls the show function, so as soon as the project is created, it is shown
@@ -30,7 +28,6 @@ var Project = function() {
 
 // displays project info onto DOM after generation
 Project.prototype.showProjectInfo = function () {
-	console.log("display", this);
 	$('#compName, #compHeader').text(this.compName);
 	$('#feReqPts').text(this.fePts);
 	$('#csReqPts').text(this.csPts);
@@ -65,9 +62,10 @@ var addEmployee = function (employee) {
 	}
 	projectInfo.calcSprint(employee.scrumPts, abbr);
 	projectInfo.assignedSkills.push(employee.skills);// push the skills to the object for referencing
-
-	$('#'+ abbr +'Name').val(employee.name);
-	$('#'+ abbr +'Pts').val(employee.scrumPts);
+	//console.log(abbr +'Pts');
+	$('#'+ abbr +'Name').text(employee.name);
+	$('#'+ abbr +'Pts').text(employee.scrumPts);
+	//console.log("$('#"+ abbr +"Pts').text("+ employee.scrumPts +")");
 };
 
 // gets a random employee, only called for first iteration, as there is nothing needed to post
@@ -78,22 +76,17 @@ var getEmployee = function () {
 		url: '/employee',
 		dataType: 'json'
 	}).done(function (res) {
-			console.log(res);
 		addEmployee(res);
-		if(projectInfo.assignedSkills.length < 3) {
-			getEmployee();
-		}
+		postEmployee();
 	});
 };
 
 // gets a random employee after the first, posting the filled positions for comparison for no overlap
 var postEmployee = function () {
-	console.log(projectInfo.assignedSkills);
 	$.ajax (
 	{
 		type: "POST",
 		url: '/employee',
-		//data: {skills: projectInfo.assignedSkills},
 		data: {skills: JSON.stringify(projectInfo.assignedSkills)},
 		dataType: 'json'
 	}).done(function (res) {
@@ -108,7 +101,6 @@ var postEmployee = function () {
 $(document).ready(function () {
 	// generate new project
 	$('#generate').click(function() {
-		//console.log('generate');
 		projectInfo = new Project();
 		$('#genSection').addClass('hidden');// hide top section
 		$('#projSection').removeClass('hidden');// show project section

@@ -3,23 +3,18 @@ function randomInt(min,max){
 }
 var employeeSkill = {
     employeeSkill: function (existingArray) {
-        var skills = ['Front End', 'Server Side', 'Client Side'];
-        if (typeof existingArray != 'undefined') {
-            for (var i = 0; i < existingArray.length; i++) {
-                //console.log(existingArray[i],skills[i]);
-                skills.forEach(function(skill,index){
-                    if (skill == existingArray[i]) {
-                        //console.log(skill,existingArray[i],index);
-                        skills.splice(index, 1);
-                        //console.log('sliced skills',skills);
-                    }
-                })
-            }
-        }
-
-        var randomIndex = randomInt(0,skills.length-1);
-        //console.log(skills,randomIndex);
-        return skills[randomIndex];
+		var skills = ['Front End', 'Server Side', 'Client Side'];
+		// if sent an array (if posted)
+		if(typeof existingArray != 'undefined') {
+			for(var i = 0; i < existingArray.length; i++) {// loop through array of placed skills
+				var index = skills.indexOf(existingArray[i]);// index of used skill in the master skill array
+				if(index != -1) {// if used
+					skills.splice(index, 1);// remove from master array
+				}
+			}
+		}
+		var randomIndex = randomInt(0, skills.length - 1);
+		return skills[randomIndex];
     }
 };
 
