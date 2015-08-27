@@ -11,16 +11,17 @@ app.get('/', function(req,res,next){
 
 app.post('/',function(req,res,next){
     var assignedSkills = req.params;
-    //STOPPED HERE
-    res.send("Name: " + employee.name + '\n');
-    res.send("Skills: " + employee.skills + '\n');
-    res.send("Scrum Points: " + employee.scrumPts + '\n');
-})
 
-http.createServer(function (req, res) {
-    res.writeHead(200);
-    res.write("Name: " + employee.name + '\n');
-    res.write("Skills: " + employee.skills + '\n');
-    res.write("Scrum Points: " + employee.scrumPts + '\n');
-    res.end();
-}).listen(process.env.PORT || 3000);
+    res.send("Name: " + employee.name + '\n');
+    res.send("Skills: " + employee.skills(assignedSkills) + '\n');
+    res.send("Scrum Points: " + employee.scrumPts + '\n');
+});
+
+app.use('/', index);
+app.use('/users', users);
+app.use('/assets',express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use('/assets',express.static(__dirname + '/node_modules/bootstrap/dist/'));
+var server = app.listen(process.env.PORT || 3000, function(){
+    //var port = server.address().port;
+    //console.log('App listening on ',);
+});
