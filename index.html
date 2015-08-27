@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Project Management Tool</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- Generator Section -->
+    <div class="row genSection">
+        <div class="col-sm-offset-2 col-sm-8 text-center">
+            <h1 class="page-header">Scrum Project Generator</h1>
+
+            <input type="button" id="generate" class="btn-lg btn-warning" value="Generate" />
+        </div>
+    </div>
+
+    <!-- DIV to wrap the entire project section -->
+    <div id="projSection">
+
+    <!-- Company Section / Assign Employee -->
+    <div class="row compSection">
+        <div class="col-sm-offset-2 col-sm-8 text-center">
+            <h2 id="compHeader" class="page-header">Company Name</h2>
+
+            <input type="button" id="assignEmp" class="btn-lg btn-success" value="Assign Employee" /> <input type="button" id="reset" class="btn-lg btn-danger" value="Reset Project" />
+        </div>
+    </div>
+    
+    <!-- Skill boxes section -->
+    <div class="row skillsSection">
+        
+        <!-- Front End Box -->
+        <div class="feBox col-sm-4 bg-success skillsBox">
+            <h3 class="feTitle text-center skillTitle">Front End</h3>
+            
+            <div class="row skillItems">
+                <div class="skillItem col-sm-12 text-center">
+                    <span class="property col-sm-7 text-center">Required Scrum Points:</span>
+                    <span id="feReqPts" class="value col-sm-5 text-center">60</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="skillItem col-sm-12 text-center">
+                    <span class="property col-sm-7 text-center">Employee Name:</span>
+                    <span id="feName" class="value col-sm-5 text-center">Jason Spidle</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="skillItem col-sm-12 text-center">
+                    <span class="property col-sm-7 text-center">Employee Scrum Points:</span>
+                    <span id="fePts" class="value col-sm-5 text-center">15</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Side Box -->
+        <div class="csBox col-sm-4 bg-warning skillsBox">
+            <h3 class="csTitle text-center skillTitle">Client Side</h3>
+            
+            <div class="row skillItems">
+                <div class="skillItem col-sm-12 text-center">
+                    <span class="property col-sm-7 text-center">Required Scrum Points:</span>
+                    <span id="csReqPts" class="value col-sm-5 text-center">60</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="skillItem col-sm-12 text-center">
+                    <span class="property col-sm-7 text-center">Employee Name:</span>
+                    <span id="csName" class="value col-sm-5 text-center">Shawn Fagerstrom</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="skillItem col-sm-12 text-center">
+                    <span class="property col-sm-7 text-center">Employee Scrum Points:</span>
+                    <span id="csPts" class="value col-sm-5 text-center">15</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Server Side Box -->
+        <div class="ssBox col-sm-4 bg-info skillsBox">
+            <h3 class="ssTitle text-center skillTitle">Server Side</h3>
+            
+            <div class="row skillItems">
+                <div class="skillItem col-sm-12 text-center">
+                    <span class="property col-sm-7 text-center">Required Scrum Points:</span>
+                    <span id="ssReqPts" class="value col-sm-5 text-center">60</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="skillItem col-sm-12 text-center">
+                    <span class="property col-sm-7 text-center">Employee Name:</span>
+                    <span id="ssName" class="value col-sm-5 text-center">Ben Hunt</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="skillItem col-sm-12 text-center">
+                    <span class="property col-sm-7 text-center">Employee Scrum Points:</span>
+                    <span id="ssPts" class="value col-sm-5 text-center">15</span>
+                </div>
+            </div>
+        </div>
+	
+	<!-- Close skill boxes section -->
+    </div>
+	
+	<!-- Sprints section -->
+    <div class="row">
+        <div class="col-sm-offset-3 col-sm-6 bg-primary sprintsSection">
+            <summary class="text-center sprintsSummary">
+                The <strong><span id="compName">COMPANY NAME</span></strong> development team will require <strong><span id="sprintsNum">5</span></strong> sprints to complete the project.
+            </summary>
+        </div>
+    </div>
+	
+	<!-- Close project section DIV -->
+    </div>
+
+<!-- Close container DIV -->
+</div>
+
+</body>
+</html>

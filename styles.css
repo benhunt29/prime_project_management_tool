@@ -1,0 +1,67 @@
+body {
+	font-size: 12px;
+}
+
+/*div {
+	border: 2px solid #000;
+}*/
+
+.genSection {
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+
+.compSection {
+	margin-top: 20px;
+	padding-bottom: 10px;
+}
+
+.skillsSection {
+	margin-top: 20px;
+	border-top: 3px solid #000;
+	
+	border-left: 3px solid #000;
+	border-right: 3px solid #000;
+}
+
+.skillsBox {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	border-bottom: 3px solid #000;
+}
+
+.csBox {
+	border-left: 3px solid #000;
+	border-right: 3px solid #000;
+}
+
+.skillTitle {
+	padding-bottom: 15px;
+}
+
+.skillItems {
+	border-top: 3px solid #000;
+	padding-top: 10px;
+}
+
+.skillItem {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.value {
+	font-weight: bold;
+}
+
+.sprintsSection {
+	margin-top: 20px;
+	font-size: 2em;
+	border-top: 3px solid #000;
+	border-bottom: 3px solid #000;
+	border-left: 3px solid #000;
+	border-right: 3px solid #000;
+}
+
+.sprintsSummary {
+	padding: 10px;
+}
