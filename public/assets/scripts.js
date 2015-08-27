@@ -113,12 +113,15 @@ $(document).ready(function () {
 		{
 			getEmployee();
 		}
+		$('#sprintsSection').removeClass('hidden');
 	});
 
 	// reset project generator
 	$('#reset').click(function () {
 		$('#genSection').removeClass('hidden');// show top section
 		$('#projSection').addClass('hidden');// hide project section
+		$('#sprintsSection').addClass('hidden');
+		$('#feName, #csName, #ssName, #fePts, #csPts, #ssPts').text('');
 		projectInfo.length = 0;// clear out object for new one
 	});
 });
