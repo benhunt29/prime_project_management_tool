@@ -1,4 +1,4 @@
-# Prime - Node / Express / jQuery / Ajax Group Challenge
+# Project Management Tool
 
 Welcome to this week's Big Group challenge!
 
@@ -23,3 +23,10 @@ Look back through the Walking Skeleton build and implement a router into your se
 
 ##Pro Mode
 When generating employees, if a skill set is already filled in the team generation, let the server know this information so that it does not generate an employee of the same skill set. Note: This will require the 'POST' method and will need to be researched.
+
+## Project Details
+Prime Digital Academy Assignment  
+Team Programming Project  
+Team: [Shawn Fagerstrom](https://github.com/Shawnf1), [Ben Hunt](https://github.com/benhunt29), [Jason Spidle](https://github.com/panoptican)  
+Technologies: JavaScript, Node.js, Express.js, MongoDB, jQuery   
+Instructor: [Joseph Szczesniak](https://github.com/NukaPunk)
